@@ -13,29 +13,81 @@ export const profile = {
 export const skillGroups = [
     {
         category: "Core",
-        skills: ["JavaScript/ES6+", "TypeScript", "ReactJs", "Angular 2+", "JSX"],
+        skills: [
+            { name: "JavaScript/ES6+", level: 95 },
+            { name: "TypeScript", level: 90 },
+            { name: "ReactJs", level: 92 },
+            { name: "AngularJs / Angular", level: 90 },
+            { name: "Signals", level: 80 },
+            { name: "JSX", level: 90 },
+        ],
     },
     {
         category: "State Management",
-        skills: ["RxJs", "NgRx", "Redux", "NGXS"],
+        skills: [
+            { name: "RxJs", level: 80 },
+            { name: "NgRx", level: 80 },
+            { name: "NGXS", level: 75 },
+            { name: "Redux", level: 85 },
+        ],
     },
     {
-        category: "Styling",
-        skills: ["HTML5", "CSS3", "SASS", "LESS", "Bootstrap", "BEM"],
+        category: "Architecture & Patterns",
+        skills: [
+            { name: "Design Pattern", level: 80 },
+            { name: "Dependency Injection", level: 85 },
+            { name: "SOLID", level: 80 },
+            { name: "SDD", level: 70 },
+        ],
+    },
+    {
+        category: "Styling & UI",
+        skills: [
+            { name: "HTML5", level: 95 },
+            { name: "CSS3", level: 92 },
+            { name: "SASS", level: 85 },
+            { name: "LESS", level: 80 },
+            { name: "Tailwind CSS", level: 85 },
+            { name: "Bootstrap", level: 85 },
+            { name: "BEM", level: 80 },
+            { name: "Atomic", level: 80 },
+            { name: "Angular Material", level: 80 },
+            { name: "Kendo-UI", level: 80 },
+            { name: "DataTable", level: 85 },
+        ],
     },
     {
         category: "Testing",
-        skills: ["Jest/Jasmine"],
+        skills: [{ name: "Jest/Jasmine", level: 75 }],
     },
     {
-        category: "Backend / CMS",
-        skills: ["PHP", "WordPress", "WooCommerce", "REST"],
-    },
-    {
-        category: "Other",
+        category: "APIs & Backend",
         skills: [
-            "Kendo-UI", "D3 JS", "Webpack", "SOLID", "Design Pattern",
-            "SEO", "Web Accessibility", "Browser APIs", "Web Performance Optimization", "Git",
+            { name: "REST", level: 85 },
+            { name: "GraphQL", level: 70 },
+            { name: "PHP", level: 70 },
+            { name: "WordPress", level: 75 },
+            { name: "WooCommerce", level: 65 },
+        ],
+    },
+    {
+        category: "Quality & Optimization",
+        skills: [
+            { name: "Web Accessibility", level: 80 },
+            { name: "SEO", level: 75 },
+            { name: "Web Performance Optimization", level: 80 },
+            { name: "Browser APIs", level: 80 },
+            { name: "Web Workers / Service Workers", level: 70 },
+            { name: "PWA", level: 70 },
+        ],
+    },
+    {
+        category: "Tools & AI",
+        skills: [
+            { name: "Git", level: 90 },
+            { name: "Webpack", level: 75 },
+            { name: "D3 JS", level: 70 },
+            { name: "Claude AI", level: 85 },
         ],
     },
 ];
