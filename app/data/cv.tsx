@@ -1,8 +1,10 @@
 export const profile = {
     name: "Hrant Sardaryan",
     title: "Senior Software Engineer",
-    tagline: "Experienced frontend developer specializing in Angular and React, with a proven track record of building intuitive and visually appealing user interfaces.",
-    summary: "Skilled at translating design concepts into responsive, optimized code to deliver seamless user experiences. Passionate about staying up to date with the latest frontend technologies and trends to continuously improve development processes.",
+    tagline:
+        "A Senior Software Engineer with over a decade of experience architecting and delivering enterprise-grade frontend solutions across Angular and React ecosystems.",
+    summary:
+        "Specializing in scalable component architecture, state management, and performance-driven engineering practices, I have led frontend initiatives at organizations including EPAM Systems, translating complex business requirements into polished, accessible, and high-performing user experiences. My approach combines technical rigor with an ongoing commitment to modern engineering standards — from reactive programming and design systems to accessibility and web performance optimization.",
     email: "sardaryanhrant@gmail.com",
     phone: "+37494091185",
     location: "Yerevan, Armenia",
@@ -14,20 +16,101 @@ export const skillGroups = [
     {
         category: "Core",
         skills: [
-            { name: "HTML5", level: 95 },
-            { name: "CSS3", level: 92 },
-            { name: "JavaScript/ES6+", level: 95 },
-            { name: "ReactJs", level: 92 },
-            { name: "TypeScript", level: 90 },
-            { name: "Angular (Signals, Control Flow, SSR)", level: 90 },
-            { name: "Standalone Components", level: 90 },
-            { name: "JSX", level: 90 },
+            {
+                name: "HTML5",
+                level: 95,
+                subSkills: [
+                    "Semantic HTML",
+                    "Forms & Validation",
+                    "ARIA Attributes",
+                    "Web Components",
+                    "Meta Tags & SEO Structure"
+                ]
+            },
+            {
+                name: "CSS3",
+                level: 92,
+                subSkills: [
+                    "Flexbox",
+                    "CSS Grid",
+                    "Animations & Transitions",
+                    "Responsive Design / Media Queries",
+                ]
+            },
+            {
+                name: "JavaScript/ES6+",
+                level: 95,
+                subSkills: [
+                    "Async/Await & Promises",
+                    "Destructuring & Spread/Rest",
+                    "Closures & Scope",
+                    "Lexical Environment",
+                    "Execution Context",
+                    "Arrow Functions",
+                    "Modules (ESM)",
+                    "Array/Object Methods",
+                    "Prototypal Inheritance",
+                    "Event Loop & Microtasks",
+                ],
+            },
+            {
+                name: "ReactJs",
+                level: 92 ,
+                subSkills: [
+                    "Hooks (useState, useEffect, etc.)",
+                    "Custom Hooks",
+                    "Context API",
+                    "Suspense & Lazy Loading",
+                    "Server Components",
+                    "React Router",
+                    "Performance (memo, useMemo, useCallback)",
+                    "Error Boundaries",
+                    "Component Composition Patterns",
+                    "JSX"
+                ]
+            },
+            {
+                name: "TypeScript",
+                level: 90,
+                subSkills: [
+                    "Generics",
+                    "Interfaces & Types",
+                    "Utility Types (Partial, Pick, Omit, etc.)",
+                    "Type Guards & Narrowing",
+                    "Discriminated Unions",
+                    "Decorators"
+                ]
+            },
+            {
+                name: "Angular",
+                level: 90,
+                subSkills: [
+                    "Signals",
+                    "Standalone Components",
+                    "New Control Flow",
+                    "Deferrable Views",
+                    "Zoneless Change Detection",
+                    "Angular DevTools",
+                    "Angular CDK",
+                    "SSR",
+                ],
+            },
         ],
     },
     {
         category: "Architecture & Patterns",
         skills: [
-            { name: "Dependency Injection", level: 85 },
+            {
+                name: "Dependency Injection",
+                level: 85,
+                subSkills: [
+                    "Hierarchical Injectors",
+                    "Injection Tokens",
+                    "Providers (useClass, useValue, useFactory)",
+                    "Multi-Providers",
+                    "Resolution modifiers"
+                ]
+            },
             { name: "SOLID, KISS, DRY Principles", level: 80 },
             { name: "SDD (Spec Driven Development with Claude AI)", level: 70 },
         ],
@@ -73,14 +156,41 @@ export const skillGroups = [
         skills: [
             { name: "Web Accessibility", level: 80 },
             { name: "Browser APIs", level: 80 },
-            { name: "Web Performance Optimization", level: 80 },
-            { name: "Lighthouse", level: 78 },
-            { name: "Core Web Vitals", level: 75 },
-            { name: "Chrome DevTools Profiling", level: 75 },
-            { name: "SEO", level: 75 },
-            { name: "Web Workers / Service Workers", level: 70 },
+            {
+                name: "Web Performance Optimization",
+                level: 80,
+                subSkills: [
+                    "Lighthouse",
+                    "Core Web Vitals",
+                    "Chrome DevTools Profiling",
+                    "Critical Rendering Path CRP"
+                ]
+            },
+            {
+                name: "SEO",
+                level: 75 ,
+                subSkills: [
+                    "Meta Tags & Open Graph",
+                    "Structured Data (JSON-LD)",
+                    "Sitemap & Robots.txt",
+                    "Server-Side Rendering / SSG",
+                    "Semantic HTML for SEO",
+                    "Canonical URLs"
+                ]
+            },
+            {
+                name: "Web Workers / Service Workers",
+                level: 70,
+                subSkills: [
+                    "Background Threading (Web Workers)",
+                    "Offline Caching Strategies",
+                    "Push Notifications",
+                    "Background Sync",
+                    "postMessage / Message Channels",
+                    "Service Worker Lifecycle (install, activate, fetch)"
+                ]
+            },
             { name: "PWA", level: 70 },
-            { name: "Critical Rendering Path CRP", level: 70 },
         ],
     },
     {
@@ -190,4 +300,4 @@ export const education = [
     },
 ];
 
-export const interests = ["Chess", "Travelling"];
+export const interests = ["Reading", "Chess", "Travelling", "Music"];

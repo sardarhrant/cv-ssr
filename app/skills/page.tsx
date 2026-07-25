@@ -14,7 +14,7 @@ export default function Skills() {
                         <h3 className="mb-5 text-sm font-semibold tracking-wide text-violet-400 uppercase">
                             {group.category}
                         </h3>
-                        <div className="space-y-4">
+                        <div className="space-y-5">
                             {group.skills.map((skill, si) => (
                                 <motion.div
                                     key={skill.name}
@@ -42,6 +42,19 @@ export default function Skills() {
                                             }}
                                         />
                                     </div>
+
+                                    {skill.subSkills && skill.subSkills.length > 0 && (
+                                        <div className="mt-2 flex flex-wrap gap-1.5">
+                                            {skill.subSkills.map((sub) => (
+                                                <span
+                                                    key={sub}
+                                                    className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-xs text-zinc-400"
+                                                >
+                          {sub}
+                        </span>
+                                            ))}
+                                        </div>
+                                    )}
                                 </motion.div>
                             ))}
                         </div>
