@@ -23,7 +23,8 @@ export default function Home() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-5xl font-bold text-transparent sm:text-6xl"
+                style={{ fontSize: "clamp(2.25rem, 5vw + 1rem, 4.5rem)" }}
+                className="bg-gradient-to-r from-white to-zinc-400 bg-clip-text font-bold text-transparent"
             >
                 {profile.name}
             </motion.h1>
@@ -32,7 +33,8 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.35 }}
-                className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400"
+                style={{ fontSize: "clamp(1rem, 1.5vw + 0.7rem, 1.25rem)" }}
+                className="mt-6 max-w-2xl leading-relaxed text-zinc-400"
             >
                 {profile.tagline}
             </motion.p>
@@ -41,6 +43,7 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.45 }}
+                style={{ fontSize: "clamp(0.9375rem, 1vw + 0.6rem, 1.0625rem)" }}
                 className="mt-4 max-w-2xl leading-relaxed text-zinc-500"
             >
                 {profile.summary}
