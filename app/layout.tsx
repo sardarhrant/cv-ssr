@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     title: "Hrant Sardaryan — Senior Software Engineer",
     description:
         "Senior Software Engineer specializing in Angular and React. 10+ years building intuitive, high-performance frontend applications.",
+    icons: {
+        icon: "/favicon.svg",
+    },
     openGraph: {
         title: "Hrant Sardaryan — Senior Software Engineer",
         description: "Senior Software Engineer specializing in Angular and React.",
