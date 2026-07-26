@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         marginBottom: 14,
         paddingBottom: 10,
         borderBottomWidth: 1,
-        borderBottomColor: "#ddd",
+        borderBottomColor: "#aaa",
     },
     contactItem: { flexDirection: "row", alignItems: "center", gap: 4 },
     iconWrap: {
@@ -50,11 +50,12 @@ const styles = StyleSheet.create({
         textTransform: "uppercase",
         letterSpacing: 0.5,
         borderBottomWidth: 1,
-        borderBottomColor: "#eee",
+        borderBottomColor: "#ccc",
         paddingBottom: 4,
     },
 
-    jobRow: { marginBottom: 10 },
+    jobRow: { marginBottom: 10, paddingTop: 10 },
+    jobDivider: { borderTopWidth: 1, borderTopColor: "#ccc" },
     jobHeader: { flexDirection: "row", justifyContent: "space-between", alignItems: "flex-end" },
     jobRole: { fontSize: 11, fontWeight: 700 },
     jobCompany: { fontSize: 10, color: ACCENT, fontWeight: 700 },
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
     bullet: { fontSize: 9, marginLeft: 10, marginTop: 2, color: "#333" },
 
     skillGroup: { marginBottom: 8, paddingTop: 8 },
-    skillDivider: { borderTopWidth: 1, borderTopColor: "#eee" },
+    skillDivider: { borderTopWidth: 1, borderTopColor: "#ccc" },
     skillCategory: { fontSize: 9.5, fontWeight: 700, marginBottom: 3, color: "#111" },
     skillLine: { fontSize: 9, color: "#444" },
 
@@ -158,7 +159,7 @@ export default function ResumeDocument() {
                     </View>
                     <View style={styles.contactItem}>
                         <View style={styles.iconWrap}><GlobeIcon /></View>
-                        <Text style={styles.contactText}>https://hrantsardaryan.labstacks.work/</Text>
+                        <Text style={styles.contactText}>https://hrantsardaryan.labstacks.work</Text>
                     </View>
                     <View style={styles.contactItem}>
                         <View style={styles.iconWrap}><GithubIcon /></View>
@@ -174,8 +175,11 @@ export default function ResumeDocument() {
                 <Text style={styles.summary}>{profile.summary}</Text>
 
                 <Text style={styles.sectionTitle}>Experience</Text>
-                {experience.map((job) => (
-                    <View key={job.company + job.period} style={styles.jobRow}>
+                {experience.map((job, i) => (
+                    <View
+                        key={job.company + job.period}
+                        style={[styles.jobRow, i > 0 ? styles.jobDivider : {}]}
+                    >
                         <View style={styles.jobHeader}>
                             <Text style={styles.jobRole}>
                                 {job.role} <Text style={styles.jobCompany}>· {job.company}</Text>
@@ -190,16 +194,6 @@ export default function ResumeDocument() {
                     </View>
                 ))}
 
-                <Text style={styles.sectionTitle}>Education</Text>
-                {education.map((edu) => (
-                    <View key={edu.degree} style={styles.eduRow}>
-                        <Text style={styles.eduDegree}>{edu.degree}</Text>
-                        <Text style={styles.eduSchool}>{edu.school}</Text>
-                        {edu.field && <Text style={styles.eduSchool}>{edu.field}</Text>}
-                        <Text style={styles.eduMeta}>{edu.period} · {edu.location}</Text>
-                    </View>
-                ))}
-
                 <Text style={styles.sectionTitle}>Skills</Text>
                 {skillGroups.map((group, i) => (
                     <View
@@ -211,6 +205,16 @@ export default function ResumeDocument() {
                         <Text style={styles.skillLine}>
                             {group.skills.map((s) => s.name).join(", ")}
                         </Text>
+                    </View>
+                ))}
+
+                <Text style={styles.sectionTitle}>Education</Text>
+                {education.map((edu) => (
+                    <View key={edu.degree} style={styles.eduRow}>
+                        <Text style={styles.eduDegree}>{edu.degree}</Text>
+                        <Text style={styles.eduSchool}>{edu.school}</Text>
+                        {edu.field && <Text style={styles.eduSchool}>{edu.field}</Text>}
+                        <Text style={styles.eduMeta}>{edu.period} · {edu.location}</Text>
                     </View>
                 ))}
 

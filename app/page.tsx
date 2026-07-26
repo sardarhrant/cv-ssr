@@ -56,22 +56,25 @@ export default function Home() {
                 transition={{ delay: 0.55 }}
                 className="mt-10 flex flex-wrap gap-4 text-sm text-zinc-400"
             >
-        <span className="flex items-center gap-2">
-          <MapPin size={16} className="text-violet-400" /> {profile.location}
-        </span>
-                <a href={`mailto:${profile.email}`} className="flex items-center gap-2 hover:text-white">
-                    <Mail size={16} className="text-violet-400" /> {profile.email}
-                </a>
-                <span className="flex items-center gap-2">
-          <Phone size={16} className="text-violet-400" /> {profile.phone}
-        </span>
-                <a href={profile.github} target="_blank" className="flex items-center gap-2 hover:text-white">
-                    <FaGithub size={16} className="text-violet-400" /> GitHub
-                </a>
-                <a href={profile.linkedin} target="_blank" className="flex items-center gap-2 hover:text-white">
-                    <FaLinkedin size={16} className="text-violet-400" /> LinkedIn
-                </a>
-                <div className="mt-8">
+                <div className="mt-10 flex flex-wrap gap-4 text-sm text-zinc-400">
+                    <span className="flex items-center gap-2">
+                        <MapPin size={16} className="text-violet-400" /> {profile.location}
+                    </span>
+                    <a href={`mailto:${profile.email}`} className="flex items-center gap-2 hover:text-white">
+                        <Mail size={16} className="text-violet-400" /> {profile.email}
+                    </a>
+                    <span className="flex items-center gap-2">
+                        <Phone size={16} className="text-violet-400" /> {profile.phone}
+                    </span>
+                    <a href={profile.github} target="_blank" className="flex items-center gap-2 hover:text-white">
+                        <FaGithub size={16} className="text-violet-400" /> GitHub
+                    </a>
+                    <a href={profile.linkedin} target="_blank" className="flex items-center gap-2 hover:text-white">
+                        <FaLinkedin size={16} className="text-violet-400" /> LinkedIn
+                    </a>
+                </div>
+
+                <div className="mt-8 w-full">
                     <DownloadCvButton />
                 </div>
             </motion.div>
