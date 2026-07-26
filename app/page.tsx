@@ -5,6 +5,7 @@ import { profile } from "./data/cv";
 import PageTransition from "./components/PageTransition";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import DownloadCvButton from "@/app/components/DownloadCvButton";
 
 export default function Home() {
     return (
@@ -70,6 +71,9 @@ export default function Home() {
                 <a href={profile.linkedin} target="_blank" className="flex items-center gap-2 hover:text-white">
                     <FaLinkedin size={16} className="text-violet-400" /> LinkedIn
                 </a>
+                <div className="mt-8">
+                    <DownloadCvButton />
+                </div>
             </motion.div>
         </PageTransition>
     );

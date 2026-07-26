@@ -92,6 +92,7 @@ export const skillGroups = [
                     "Zoneless Change Detection",
                     "Angular DevTools",
                     "Angular CDK",
+                    "Kendo UI",
                     "SSR",
                 ],
             },
@@ -112,7 +113,6 @@ export const skillGroups = [
                 ]
             },
             { name: "SOLID, KISS, DRY Principles", level: 80 },
-            { name: "SDD (Spec Driven Development with Claude AI)", level: 70 },
         ],
     },
     {
@@ -204,12 +204,32 @@ export const skillGroups = [
     {
         category: "Tools & DevOps",
         skills: [
-            { name: "Git", level: 90 },
+            {
+                name: "Git",
+                level: 90,
+                subSkills: [
+                    "Branching Strategies (Git Flow, trunk-based)",
+                    "Merge Conflict Resolution",
+                    "Cherry-pick"
+                ]
+            },
             { name: "ESLint/Prettier", level: 85 },
-            { name: "Claude AI", level: 85 },
+            {
+                name: "Claude AI",
+                level: 85,
+                subSkills: [
+                    "AI-Assisted Development",
+                    "Prompt Engineering",
+                    "Debugging with AI",
+                    "Code Review & Refactoring",
+                    "Claude Code / CLI Tools",
+                    "SDD (Spec Driven Development)"
+
+                ]
+            },
             { name: "Vite", level: 80 },
             { name: "Webpack", level: 75 },
-            { name: "Docker", level: 75 },
+            { name: "Docker", level: 40 },
             { name: "Next.js", level: 75 },
             { name: "D3 JS", level: 70 },
             { name: "CI/CD", level: 70 },
