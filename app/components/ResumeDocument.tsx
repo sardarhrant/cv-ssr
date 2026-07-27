@@ -9,7 +9,7 @@ import {
     Circle,
     Rect,
 } from "@react-pdf/renderer";
-import { profile, skillGroups, experience, education, interests } from "@/app/data/cv";
+import {profile, skillGroups, experience, education, interests, languages} from "@/app/data/cv";
 
 const ACCENT = "#7c3aed";
 const TEXT_COLOR = "#555";
@@ -217,6 +217,11 @@ export default function ResumeDocument() {
                         <Text style={styles.eduMeta}>{edu.period} · {edu.location}</Text>
                     </View>
                 ))}
+
+                <Text style={styles.sectionTitle}>Languages</Text>
+                <Text style={styles.skillLine}>
+                    {languages.map((l) => `${l.name} (${l.level})`).join(", ")}
+                </Text>
 
                 <Text style={styles.sectionTitle}>Interests</Text>
                 <Text style={styles.skillLine}>{interests.join(", ")}</Text>

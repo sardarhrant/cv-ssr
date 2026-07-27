@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { profile, interests } from "@/app/data/cv";
+import {profile, interests, languages} from "@/app/data/cv";
 import PageTransition from "@/app/components/PageTransition";
 import { Mail, Phone } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -50,6 +50,20 @@ export default function Contact() {
             <a href={profile.linkedin} target="_blank" className="flex items-center gap-2 hover:text-white">
                 <FaLinkedin size={16} className="text-violet-400" /> LinkedIn
             </a>
+        </div>
+
+        <h3 className="mt-10 mb-3 text-sm font-semibold tracking-wide text-violet-400 uppercase">
+            Languages
+        </h3>
+        <div className="flex flex-wrap gap-2">
+            {languages.map((lang) => (
+                <span
+                    key={lang.name}
+                    className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-zinc-300"
+                >
+                    {lang.name} <span className="text-zinc-500">· {lang.level}</span>
+                </span>
+            ))}
         </div>
 
     <h3 className="mt-10 mb-3 text-sm font-semibold tracking-wide text-violet-400 uppercase">

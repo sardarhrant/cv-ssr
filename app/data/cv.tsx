@@ -321,3 +321,9 @@ export const education = [
 ];
 
 export const interests = ["Reading", "Chess", "Travelling", "Music"];
+
+export const languages = [
+    { name: "Armenian", level: "Native" },
+    { name: "Russian", level: "B2" },
+    { name: "English", level: "B2" },
+];
