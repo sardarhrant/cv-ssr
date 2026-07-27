@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/app/components/Navbar";
 import "./globals.css";
+import Script from "next/script";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://hrantsardaryan.labstacks.work"),
@@ -52,6 +53,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <body className="bg-[#0a0a0f] text-zinc-200">
         <Navbar />
         {children}
+        <Script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon='{"token": "184950b975484cf1b9138ad23eebb09e"}'
+            strategy="afterInteractive"
+        />
         </body>
         </html>
     );
