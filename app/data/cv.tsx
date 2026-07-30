@@ -3,7 +3,7 @@ export const profile = {
     title: "Senior Frontend Engineer",
     tagline:
         "A Senior Software Engineer with over a decade of experience architecting and delivering enterprise-grade frontend solutions across Angular and React ecosystems.",
-    summary: "Yerevan, Armenia sardaryanhrant@gmail.com +374 94 09 11 85 github.com/sardarhrant linkedin.com/in/hrant-sardaryan Senior Frontend Engineer with 10+ years building enterprise-grade Angular and React applications. Recent focus: cutting page-load times through code-splitting and caching strategies, leading component-library and design-system adoption across cross-functional teams, and mentoring engineers on state-management best practices (Redux, NgRx, RxJs). Comfortable owning a feature from architecture through delivery in fast-paced, distributed teams.",
+    summary: "Senior Frontend Engineer with 10+ years building enterprise-grade Angular and React applications. Recent focus: cutting page-load times through code-splitting and caching strategies, leading component-library and design-system adoption across cross-functional teams, and mentoring engineers on state-management best practices (Redux, NgRx, RxJs). Comfortable owning a feature from architecture through delivery in fast-paced, distributed teams.",
     email: "sardaryanhrant@gmail.com",
     phone: "+37494091185",
     location: "Yerevan, Armenia",
