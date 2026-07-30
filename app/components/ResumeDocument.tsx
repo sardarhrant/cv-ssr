@@ -11,51 +11,52 @@ import {
 } from "@react-pdf/renderer";
 import {profile, skillGroups, experience, education, interests, languages} from "@/app/data/cv";
 
-const ACCENT = "#7c3aed";
+const ACCENT = "#000";
 const TEXT_COLOR = "#555";
 
 const styles = StyleSheet.create({
     page: { padding: 36, fontSize: 10, fontFamily: "Helvetica", color: "#1f1f1f", lineHeight: 1.4 },
-    name: { fontSize: 22, fontWeight: 700, marginBottom: 18 },
-    title: { fontSize: 12, color: ACCENT, fontWeight: 700, marginBottom: 12 },
+    name: { fontSize: 22, fontWeight: 600, marginBottom: 14, color: "#111" },
+    title: { fontSize: 10, color: "#555", fontWeight: 400, marginBottom: 8 },
 
     contactRow: {
         flexDirection: "row",
         flexWrap: "wrap",
-        gap: 14,
-        marginBottom: 14,
+        columnGap: 10,
+        rowGap: 4,
+        marginBottom: 10,
         paddingBottom: 10,
-        borderBottomWidth: 1,
-        borderBottomColor: "#aaa",
+        borderBottomWidth: 0.5,
+        borderBottomColor: "#000",
     },
     contactItem: { flexDirection: "row", alignItems: "center", gap: 4 },
-    iconWrap: {
-        width: 9,
-        height: 9,
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: -2,
-    },
-    contactText: { fontSize: 9, color: TEXT_COLOR },
+    iconWrap: { width: 9, height: 9, justifyContent: "center", alignItems: "center", marginTop: -7 },
+    contactText: { fontSize: 8, color: TEXT_COLOR },
 
-    tagline: { fontSize: 9.5, marginBottom: 6, lineHeight: 1.5 },
-    summary: { fontSize: 9, color: "#555", marginBottom: 4, lineHeight: 1.5 },
+    summaryBox: {
+        borderWidth: 1,
+        borderColor: "#ddd",
+        borderRadius: 4,
+        padding: 10,
+        marginBottom: 4,
+    },
+    summaryText: { fontSize: 9, color: "#333", lineHeight: 1.55 },
 
     sectionTitle: {
         fontSize: 12,
         fontWeight: 700,
-        marginTop: 16,
+        marginTop: 14,
         marginBottom: 8,
         color: ACCENT,
         textTransform: "uppercase",
         letterSpacing: 0.5,
         borderBottomWidth: 1,
-        borderBottomColor: "#ccc",
+        borderBottomColor: "#000",
         paddingBottom: 4,
     },
 
     jobRow: { marginBottom: 10, paddingTop: 10 },
-    jobDivider: { borderTopWidth: 1, borderTopColor: "#ccc" },
+    jobDivider: { borderTopWidth: 0.5, borderTopColor: "#000" },
     jobHeader: { flexDirection: "row", justifyContent: "space-between", alignItems: "flex-end" },
     jobRole: { fontSize: 11, fontWeight: 700 },
     jobCompany: { fontSize: 10, color: ACCENT, fontWeight: 700 },
@@ -64,14 +65,14 @@ const styles = StyleSheet.create({
     bullet: { fontSize: 9, marginLeft: 10, marginTop: 2, color: "#333" },
 
     skillGroup: { marginBottom: 8, paddingTop: 8 },
-    skillDivider: { borderTopWidth: 1, borderTopColor: "#ccc" },
-    skillCategory: { fontSize: 9.5, fontWeight: 700, marginBottom: 3, color: "#111" },
+    skillDivider: { borderTopWidth: 0.1},
+    skillCategory: { fontSize: 9.5, fontWeight: 600, marginBottom: 3, color: "#000" },
     skillLine: { fontSize: 9, color: "#444" },
 
     eduRow: { marginBottom: 8 },
-    eduDegree: { fontSize: 10.5, fontWeight: 700 },
-    eduSchool: { fontSize: 9.5 },
-    eduMeta: { fontSize: 8.5, color: "#666", marginTop: 1 },
+    eduDegree: { fontSize: 10, fontWeight: 700, marginBottom: 4 },
+    eduSchool: { fontSize: 9, lineHeight: 1.2 },
+    eduMeta: { fontSize: 7, color: "#666", marginTop: 4 },
 });
 
 function MailIcon() {
@@ -171,8 +172,11 @@ export default function ResumeDocument() {
                     </View>
                 </View>
 
-                <Text style={styles.tagline}>{profile.tagline}</Text>
-                <Text style={styles.summary}>{profile.summary}</Text>
+                <View style={styles.summaryBox}>
+                    <Text style={styles.summaryText}>
+                        {profile.tagline} {profile.summary}
+                    </Text>
+                </View>
 
                 <Text style={styles.sectionTitle}>Experience</Text>
                 {experience.map((job, i) => (
@@ -187,7 +191,9 @@ export default function ResumeDocument() {
                             <Text style={styles.jobMeta}>{job.period}</Text>
                         </View>
                         <Text style={styles.jobMeta}>{job.location}</Text>
+
                         <Text style={styles.jobDesc}>{job.description}</Text>
+
                         {job.achievements.map((a) => (
                             <Text key={a} style={styles.bullet}>• {a}</Text>
                         ))}

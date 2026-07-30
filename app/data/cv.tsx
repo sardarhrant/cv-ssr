@@ -1,10 +1,9 @@
 export const profile = {
     name: "Hrant Sardaryan",
-    title: "Senior Software Engineer",
+    title: "Senior Frontend Engineer",
     tagline:
         "A Senior Software Engineer with over a decade of experience architecting and delivering enterprise-grade frontend solutions across Angular and React ecosystems.",
-    summary:
-        "Specializing in scalable component architecture, state management, and performance-driven engineering practices, I have led frontend initiatives at organizations including EPAM Systems, translating complex business requirements into polished, accessible, and high-performing user experiences. My approach combines technical rigor with an ongoing commitment to modern engineering standards — from reactive programming and design systems to accessibility and web performance optimization.",
+    summary: "Yerevan, Armenia sardaryanhrant@gmail.com +374 94 09 11 85 github.com/sardarhrant linkedin.com/in/hrant-sardaryan Senior Frontend Engineer with 10+ years building enterprise-grade Angular and React applications. Recent focus: cutting page-load times through code-splitting and caching strategies, leading component-library and design-system adoption across cross-functional teams, and mentoring engineers on state-management best practices (Redux, NgRx, RxJs). Comfortable owning a feature from architecture through delivery in fast-paced, distributed teams.",
     email: "sardaryanhrant@gmail.com",
     phone: "+37494091185",
     location: "Yerevan, Armenia",
@@ -38,13 +37,14 @@ export const skillGroups = [
                 ]
             },
             {
-                name: "JavaScript/ES6+",
+                name: "JavaScript (ES6+)",
                 level: 95,
                 subSkills: [
                     "Async/Await & Promises",
                     "Destructuring & Spread/Rest",
                     "Closures & Scope",
                     "Lexical Environment",
+                    "Lexical Scope",
                     "Execution Context",
                     "Arrow Functions",
                     "Modules (ESM)",
@@ -119,7 +119,20 @@ export const skillGroups = [
         category: "State Management",
         skills: [
             { name: "Redux", level: 85 },
-            { name: "RxJs", level: 80 },
+            {
+                name: "RxJs",
+                level: 80,
+                subSkills: [
+                    "Hot / Cold Observables",
+                    "switchMap / mergeMap / concatMap / exhaustMap",
+                    "debounceTime / throttleTime",
+                    "shareReplay / share",
+                    "combineLatest / withLatestFrom",
+                    "takeUntil / take",
+                    "catchError / retry",
+                    "BehaviorSubject / Subject / ReplaySubject, AsyncSubject",
+                ]
+            },
             { name: "NgRx", level: 80 },
             { name: "NGXS", level: 75 },
         ],
@@ -141,9 +154,9 @@ export const skillGroups = [
         category: "Backend & APIs",
         skills: [
             { name: "REST", level: 85 },
-            { name: "WebSockets", level: 78 },
-            { name: "GraphQL", level: 70 },
-            { name: "PHP", level: 70 },
+            { name: "WebSockets", level: 70 },
+            { name: "GraphQL", level: 60 },
+            { name: "PHP", level: 50 },
             { name: "WordPress", level: 75 },
             { name: "WooCommerce", level: 65 },
             { name: "Node.js (Express, Nest)", level: 50 },
@@ -240,39 +253,43 @@ export const skillGroups = [
 
 export const experience = [
     {
-        role: "Senior Software Engineer",
+        role: "Senior Frontend (Angular) Engineer",
         company: "EPAM Systems LLC",
         period: "08/2025 - Present",
         location: "Yerevan, Armenia",
         description:
             "American company specializing in software engineering services, digital platform engineering, and digital product design.",
-        achievements: [] as string[],
+        achievements: [
+            "Leading migration of a legacy AngularJS module to Angular 17, cutting bundle size by ~30% and reducing reported UI bugs",
+            "Established a shared component library adopted by 3 product teams, cutting duplicate UI code and new-feature turnaround time",
+            "Mentoring 2 mid-level engineers on RxJs and NgRx patterns, and running architecture reviews for new features",
+        ],
     },
     {
-        role: "Software Engineer",
+        role: "Senior Frontend Engineer",
         company: "Peller Tech Inc",
         period: "10/2023 - 08/2025",
         location: "Yerevan, Armenia",
         description:
             "Peller Tech Digital Solutions empowers businesses to maximize investments through tailored digital strategies.",
         achievements: [
-            "Used ReactJs, Redux-Saga",
-            "Styled Components",
-            "Performance improvement",
+            "Rebuilt core checkout flow in React with Redux-Saga, reducing average page load time by 40%",
+            "Migrated legacy CSS to Styled Components, cutting stylesheet size and eliminating class-name",
+            "Introduced Lighthouse-based performance budgets into CI, catching regressions before release",
         ],
     },
     {
-        role: "Software Engineer",
+        role: "Frontend (Angular) Engineer",
         company: "EPAM Systems LLC",
         period: "09/2021 - 09/2023",
         location: "Yerevan, Armenia",
         description:
             "EPAM software engineering heritage combined with their strategic business and innovation consulting, design thinking, and physical-digital capabilities.",
         achievements: [
-            "Used kendo-tree, kendo-Combobox, kendo-grid, D3.js",
-            "Developed communication between services and component hierarchy",
-            "Performed manual functional and unit testing using Jest with marbles",
-            "Upgraded Angular version",
+            "Built interactive data-visualization dashboards with D3.js and Kendo UI (kendo-grid, kendo-tree, kendo-combobox)",
+            "Designed communication layer between microservices and the component hierarchy, reducing redundant API calls",
+            "Wrote unit and marble tests with Jest for RxJs streams, raising test coverage on core modules and reducing regression bugs",
+            "Led the upgrade from Angular 11 to Angular 14 across a multi-module enterprise application with zero production downtime",
         ],
     },
     {
@@ -283,9 +300,9 @@ export const experience = [
         description:
             "Bonee is a digital QR menu/catalog solution that allows you to provide a digital product list to your clients.",
         achievements: [
-            "Developed the dashboard using Angular and the client-facing interface using React",
-            "Designed and integrated RESTful authentication workflows for secure, reliable communication",
-            "Utilized advanced WebSocket API technology for real-time client-server communication",
+            "Built the admin dashboard in Angular and the client-facing digital menu app in React, used by restaurant partners.",
+            "Designed and implemented RESTful authentication (JWT-based) for secure client-server communication",
+            "Implemented WebSocket-based real-time order updates, replacing polling and cutting perceived latency for live order status",
         ],
     },
     {
@@ -296,20 +313,18 @@ export const experience = [
         description:
             "Developed webapps on WordPress platform, integrated custom functionality in custom plugins.",
         achievements: [
-            "Developed web apps based on WordPress platform",
-            "Created web apps based on Laravel/CakePHP framework",
-            "Developed RESTful APIs for mobile apps",
+            "Built custom WordPress plugins and Laravel web apps, and shipped REST APIs consumed by companion mobile apps skills",
         ],
     },
 ];
 
 export const education = [
     {
-        degree: "Master Degree",
+        degree: "M.Sc., Management & Information Technology",
         school: "West Saxon University of Applied Sciences Zwickau",
         field: "Management and Information Technology",
         period: "09/2024 - 06/2025",
-        location: "Germany",
+        location: "Germany (part-time, remote)",
     },
     {
         degree: "Magister Degree",
