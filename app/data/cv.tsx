@@ -276,6 +276,7 @@ export const experience = [
             "Rebuilt core checkout flow in React with Redux-Saga, reducing average page load time by 40%",
             "Migrated legacy CSS to Styled Components, cutting stylesheet size and eliminating class-name",
             "Introduced Lighthouse-based performance budgets into CI, catching regressions before release",
+            "Maintained and improved MQTT-based data pipelines for real-time data delivery",
         ],
     },
     {
@@ -300,9 +301,10 @@ export const experience = [
         description:
             "Bonee is a digital QR menu/catalog solution that allows you to provide a digital product list to your clients.",
         achievements: [
-            "Built the admin dashboard in Angular and the client-facing digital menu app in React, used by restaurant partners.",
+            "Built the admin dashboard in Angular and the client-facing digital menu app in React.",
             "Designed and implemented RESTful authentication (JWT-based) for secure client-server communication",
             "Implemented WebSocket-based real-time order updates, replacing polling and cutting perceived latency for live order status",
+            "Implemented multi-language support (i18n) across the application, enabling seamless translation and localization for clients"
         ],
     },
     {
@@ -314,6 +316,7 @@ export const experience = [
             "Developed webapps on WordPress platform, integrated custom functionality in custom plugins.",
         achievements: [
             "Built custom WordPress plugins and Laravel web apps, and shipped REST APIs consumed by companion mobile apps skills",
+            "Designed and developed custom WordPress themes/templates tailored to client requirements"
         ],
     },
 ];
@@ -322,8 +325,8 @@ export const education = [
     {
         degree: "M.Sc., Management & Information Technology",
         school: "West Saxon University of Applied Sciences Zwickau",
-        field: "Management and Information Technology",
-        period: "09/2024 - 06/2025",
+        field: "",
+        period: "09/2024 - 06/2026",
         location: "Germany (part-time, remote)",
     },
     {
@@ -338,7 +341,7 @@ export const education = [
 export const interests = ["Reading", "Chess", "Travelling", "Music"];
 
 export const languages = [
-    { name: "Armenian", level: "Native" },
-    { name: "Russian", level: "B2" },
     { name: "English", level: "B2" },
+    { name: "Russian", level: "B2" },
+    { name: "Armenian", level: "Native" },
 ];
