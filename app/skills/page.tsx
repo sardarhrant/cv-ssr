@@ -11,7 +11,7 @@ export default function Skills() {
             <div className="space-y-10">
                 {skillGroups.map((group, gi) => (
                     <div key={group.category}>
-                        <h3 className="mb-5 text-sm font-semibold tracking-wide text-violet-400 uppercase">
+                        <h3 className="mb-5 text-sm font-semibold tracking-wide text-white uppercase">
                             {group.category}
                         </h3>
                         <div className="space-y-5">
@@ -24,14 +24,14 @@ export default function Skills() {
                                     transition={{ delay: gi * 0.05 + si * 0.03 }}
                                 >
                                     <div className="mb-1.5 flex items-center justify-between">
-                    <span className="text-sm font-medium text-zinc-300">
-                      {skill.name}
-                    </span>
+                                    <span className="text-sm font-medium text-zinc-300">
+                                      {skill.name}
+                                    </span>
                                         <span className="text-xs text-zinc-500">{skill.level}%</span>
                                     </div>
                                     <div className="h-2 w-full overflow-hidden rounded-full bg-white/5">
                                         <motion.div
-                                            className="h-full rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-400"
+                                            className="h-full rounded-full bg-gradient-to-r from-teal-500 to-emerald-400"
                                             initial={{ width: 0 }}
                                             whileInView={{ width: `${skill.level}%` }}
                                             viewport={{ once: true }}

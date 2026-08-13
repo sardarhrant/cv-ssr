@@ -275,7 +275,6 @@ export const experience = [
         achievements: [
             "Rebuilt core checkout flow in React with Redux-Saga, reducing average page load time by 40%",
             "Migrated legacy CSS to Styled Components, cutting stylesheet size and eliminating class-name",
-            "Introduced Lighthouse-based performance budgets into CI, catching regressions before release",
             "Maintained and improved MQTT-based data pipelines for real-time data delivery",
         ],
     },

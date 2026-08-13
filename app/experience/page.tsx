@@ -18,8 +18,8 @@ export default function Experience() {
                         transition={{ delay: i * 0.08 }}
                         className="relative"
                     >
-                        <span className="absolute -left-[2.15rem] top-1.5 h-3 w-3 rounded-full bg-violet-500" />
-                        <p className="text-sm font-medium text-violet-400">{job.period}</p>
+                        <span className="absolute -left-[2.4rem] top-1.5 h-3 w-3 rounded-full bg-white" />
+                        <p className="text-sm font-medium text-white">{job.period}</p>
                         <h3 className="mt-1 text-xl font-semibold text-white">{job.role}</h3>
                         <p className="text-zinc-400">
                             {job.company} · {job.location}
@@ -40,7 +40,7 @@ export default function Experience() {
             <div className="space-y-6">
                 {education.map((edu) => (
                     <div key={edu.degree} className="rounded-lg border border-white/10 bg-white/5 p-5">
-                        <p className="text-sm font-medium text-violet-400">{edu.period}</p>
+                        <p className="text-sm font-medium text-white">{edu.period}</p>
                         <h3 className="mt-1 font-semibold text-white">{edu.degree}</h3>
                         <p className="text-zinc-400">{edu.school}</p>
                         {edu.field && <p className="text-sm text-zinc-500">{edu.field}</p>}

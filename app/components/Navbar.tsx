@@ -34,7 +34,7 @@ export default function Navbar() {
                                 style={{ fontSize: "clamp(0.8125rem, 0.6vw + 0.6rem, 0.9375rem)" }}
                                 className={`rounded-md px-4 py-2 font-medium transition-colors ${
                                     isActive
-                                        ? "bg-violet-500/15 text-violet-300"
+                                        ? "bg-white/5 text-white-300"
                                         : "text-zinc-400 hover:bg-white/5 hover:text-white"
                                 }`}
                             >

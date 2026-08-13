@@ -37,22 +37,22 @@ export default function Contact() {
             <div className="space-y-4">
 
                <a href={`mailto:${profile.email}`}
-                className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 p-4 text-zinc-300 transition-colors hover:border-violet-400/40 hover:text-white"
+                className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 p-4 text-zinc-300 transition-colors hover:border-white/40 hover:text-white"
                 >
-                <Mail size={18} className="text-violet-400" /> {profile.email}
+                <Mail size={18} className="text-white" /> {profile.email}
             </a>
             <div className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 p-4 text-zinc-300">
-                <Phone size={18} className="text-violet-400" /> {profile.phone}
+                <Phone size={18} className="text-white" /> {profile.phone}
             </div>
             <a href={profile.github} target="_blank" className="flex items-center gap-2 hover:text-white">
-                <FaGithub size={16} className="text-violet-400" /> GitHub
+                <FaGithub size={16} className="text-white" /> GitHub
             </a>
             <a href={profile.linkedin} target="_blank" className="flex items-center gap-2 hover:text-white">
-                <FaLinkedin size={16} className="text-violet-400" /> LinkedIn
+                <FaLinkedin size={16} className="text-white" /> LinkedIn
             </a>
         </div>
 
-        <h3 className="mt-10 mb-3 text-sm font-semibold tracking-wide text-violet-400 uppercase">
+        <h3 className="mt-10 mb-3 text-sm font-semibold tracking-wide text-white uppercase">
             Languages
         </h3>
         <div className="flex flex-wrap gap-2">
@@ -66,7 +66,7 @@ export default function Contact() {
             ))}
         </div>
 
-    <h3 className="mt-10 mb-3 text-sm font-semibold tracking-wide text-violet-400 uppercase">
+    <h3 className="mt-10 mb-3 text-sm font-semibold tracking-wide text-white uppercase">
         Interests
     </h3>
     <div className="flex gap-2">
@@ -77,7 +77,7 @@ export default function Contact() {
         ))}
     </div>
 
-    <h3 className="mt-12 mb-5 text-sm font-semibold tracking-wide text-violet-400 uppercase">
+    <h3 className="mt-12 mb-5 text-sm font-semibold tracking-wide text-white uppercase">
         Send a message
     </h3>
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -86,7 +86,7 @@ export default function Contact() {
             placeholder="Your name"
             value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })}
-            className="w-full rounded-lg border border-white/10 bg-white/5 p-3 text-sm text-white placeholder-zinc-500 outline-none focus:border-violet-400/50"
+            className="w-full rounded-lg border border-white/10 bg-white/5 p-3 text-sm text-white placeholder-zinc-500 outline-none focus:border-white/40"
         />
         <input
             required
@@ -94,7 +94,7 @@ export default function Contact() {
             placeholder="Your email"
             value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
-            className="w-full rounded-lg border border-white/10 bg-white/5 p-3 text-sm text-white placeholder-zinc-500 outline-none focus:border-violet-400/50"
+            className="w-full rounded-lg border border-white/10 bg-white/5 p-3 text-sm text-white placeholder-zinc-500 outline-none focus:border-white/40"
         />
         <textarea
             required
@@ -102,13 +102,12 @@ export default function Contact() {
             placeholder="Your message"
             value={form.message}
             onChange={(e) => setForm({ ...form, message: e.target.value })}
-            className="w-full resize-none rounded-lg border border-white/10 bg-white/5 p-3 text-sm text-white placeholder-zinc-500 outline-none focus:border-violet-400/50"
+            className="w-full resize-none rounded-lg border border-white/10 bg-white/5 p-3 text-sm text-white placeholder-zinc-500 outline-none focus:border-white/40"
         />
         <button
             type="submit"
             disabled={status === "sending"}
-            className="rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500 px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50"
-        >
+            className="inline-block rounded-lg border border-white/20 bg-white/5 px-6 py-3 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/40">
             {status === "sending" ? "Sending..." : "Send message"}
         </button>
         {status === "sent" && (
