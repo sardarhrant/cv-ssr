@@ -322,18 +322,29 @@ export const experience = [
 
 export const education = [
     {
-        degree: "M.Sc., Management & Information Technology",
-        school: "West Saxon University of Applied Sciences Zwickau",
-        field: "",
+        degree: "Master's Degree of Management Information Systems",
+        school: "West Saxon University of Applied Sciences Zwickau / Armenian State University of Economics (ASUE) - joint program.",
+        thesis: "Thesis: The Impact of Data Science on Startup Innovation",
+        field: "Management Information Systems",
         period: "09/2024 - 06/2026",
-        location: "Germany (part-time, remote)",
+        location: "Armenia",
+        diplomaUrl: "/diplomas/asue-diploma.pdf",
     },
+    // {
+    //     degree: "M.Sc., Management & Information Technology",
+    //     school: "West Saxon University of Applied Sciences Zwickau",
+    //     field: "",
+    //     period: "09/2024 - 06/2026",
+    //     location: "Germany (part-time, remote)",
+    //     diplomaUrl: "/diplomas/msc-diploma.pdf",
+    // },
     {
-        degree: "Magister Degree",
-        school: "Armenian State Pedagogical University After Khachatur Abovyan",
-        field: "",
+        degree: "Master's Degree",
+        school: "Armenian State Pedagogical University (ASPU)",
+        field: "Biology, In Addition Chemistry",
         period: "09/2002 - 06/2007",
         location: "Yerevan, Armenia",
+        diplomaUrl: "/diplomas/aspu-diploma.pdf",
     },
 ];
 

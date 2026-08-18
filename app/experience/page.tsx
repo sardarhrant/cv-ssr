@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { experience, education } from "@/app/data/cv";
 import PageTransition from "@/app/components/PageTransition";
+import { FileText } from "lucide-react";
+import {Fragment} from "react";
 
 export default function Experience() {
     return (
@@ -41,9 +43,27 @@ export default function Experience() {
                 {education.map((edu) => (
                     <div key={edu.degree} className="rounded-lg border border-white/10 bg-white/5 p-5">
                         <p className="text-sm font-medium text-white">{edu.period}</p>
+                        <hr className="mt-4 mb-4 text-gray-600"/>
                         <h3 className="mt-1 font-semibold text-white">{edu.degree}</h3>
-                        <p className="text-zinc-400">{edu.school}</p>
-                        {edu.field && <p className="text-sm text-zinc-500">{edu.field}</p>}
+                        <hr className="mt-4 mb-4 text-gray-600"/>
+                        <p className="text-white">{edu.school}</p>
+                        <hr className="mt-4 mb-4 text-gray-600"/>
+                        {edu.thesis && <Fragment>
+                            <p className="text-xs italic text-white">{edu.thesis}</p>
+                            <hr className="mt-4 mb-4 text-gray-600"/>
+                        </Fragment>}
+                        {edu.field && <p className="text-xs italic text-white">{edu.field}</p>}
+                        <hr className="mt-4 mb-4 text-gray-600"/>
+                        {edu.diplomaUrl && (
+                            <a
+                                href={edu.diplomaUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="mt-3 inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white"
+                            >
+                                <FileText size={16} /> View diploma
+                            </a>
+                        )}
                     </div>
                 ))}
             </div>
