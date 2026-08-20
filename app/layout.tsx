@@ -57,6 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <meta property="og:site_name" content="LabStacks" />
             <meta name="google-site-verification" content="-ixGdHTQ-YQ5s1D3WCBAAibrajGkdc-iCvPANqJYUoY" />
         </head>
         <body className="bg-[#0a0a0f] text-zinc-200">
@@ -72,12 +73,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* End Google Tag Manager (noscript) */}
         <Navbar />
         {children}
-        <Script
-            defer
+        {/* Cloudflare Web Analytics */}
+        <script
+            type="module"
+            async
             src="https://static.cloudflareinsights.com/beacon.min.js"
             data-cf-beacon='{"token": "184950b975484cf1b9138ad23eebb09e"}'
-            strategy="afterInteractive"
         />
+        {/* End Cloudflare Web Analytics */}
         </body>
         </html>
     );
