@@ -328,23 +328,18 @@ export const education = [
         field: "Management Information Systems",
         period: "09/2024 - 06/2026",
         location: "Armenia",
-        diplomaUrl: "/diplomas/asue-diploma.pdf",
+        diplomas: [
+            { label: "West Saxon University diploma", url: "/diplomas/WHZ-Management-And-Information-diploma.pdf" },
+            { label: "ASUE diploma", url: "/diplomas/ASUE-Management-And-Information-diploma.pdf" },
+        ],
     },
-    // {
-    //     degree: "M.Sc., Management & Information Technology",
-    //     school: "West Saxon University of Applied Sciences Zwickau",
-    //     field: "",
-    //     period: "09/2024 - 06/2026",
-    //     location: "Germany (part-time, remote)",
-    //     diplomaUrl: "/diplomas/msc-diploma.pdf",
-    // },
     {
         degree: "Master's Degree",
         school: "Armenian State Pedagogical University (ASPU)",
         field: "Biology, In Addition Chemistry",
         period: "09/2002 - 06/2007",
         location: "Yerevan, Armenia",
-        diplomaUrl: "/diplomas/aspu-diploma.pdf",
+        diplomas: [{ label: "ASPU diploma", url: "/diplomas/ASPU-Biology-In-Addition-Chemistry-diploma.pdf" }],
     },
 ];
 

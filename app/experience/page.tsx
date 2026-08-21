@@ -54,15 +54,20 @@ export default function Experience() {
                         </Fragment>}
                         {edu.field && <p className="text-xs italic text-white">{edu.field}</p>}
                         <hr className="mt-4 mb-4 text-gray-600"/>
-                        {edu.diplomaUrl && (
-                            <a
-                                href={edu.diplomaUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-3 inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white"
-                            >
-                                <FileText size={16} /> View diploma
-                            </a>
+                        {edu.diplomas.length > 0 && (
+                            <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
+                                {edu.diplomas.map((diploma) => (
+                                    <a
+                                        key={diploma.url}
+                                        href={diploma.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white"
+                                    >
+                                        <FileText size={16} /> {diploma.label}
+                                    </a>
+                                ))}
+                            </div>
                         )}
                     </div>
                 ))}
