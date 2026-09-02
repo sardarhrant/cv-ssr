@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { experience, education } from "@/app/data/cv";
+import { experience, education, certifications } from "@/app/data/cv";
 import PageTransition from "@/app/components/PageTransition";
-import { FileText } from "lucide-react";
+import { FileText, Award, ExternalLink } from "lucide-react";
 import {Fragment} from "react";
 
 export default function Experience() {
@@ -72,6 +72,56 @@ export default function Experience() {
                     </div>
                 ))}
             </div>
+
+            {certifications.length > 0 && (
+                <>
+                    <h2 className="mt-16 mb-10 text-3xl font-bold text-white">Certifications</h2>
+                    <div className="space-y-6">
+                        {certifications.map((cert) => (
+                            <div
+                                key={cert.name + cert.issuer}
+                                className="rounded-lg border border-white/10 bg-white/5 p-5"
+                            >
+                                <p className="text-sm font-medium text-white">{cert.date}</p>
+                                <hr className="mt-4 mb-4 text-gray-600" />
+                                <h3 className="mt-1 flex items-center gap-2 font-semibold text-white">
+                                    <Award size={18} /> {cert.name}
+                                </h3>
+                                <hr className="mt-4 mb-4 text-gray-600" />
+                                <p className="text-white">{cert.issuer}</p>
+                                {(cert.url || (cert.files && cert.files.length > 0)) && (
+                                    <>
+                                        <hr className="mt-4 mb-4 text-gray-600" />
+                                        <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
+                                            {cert.url && (
+                                                <a
+                                                    href={cert.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white"
+                                                >
+                                                    <ExternalLink size={16} /> Verify credential
+                                                </a>
+                                            )}
+                                            {cert.files?.map((file) => (
+                                                <a
+                                                    key={file.url}
+                                                    href={file.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white"
+                                                >
+                                                    <FileText size={16} /> {file.label}
+                                                </a>
+                                            ))}
+                                        </div>
+                                    </>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </>
+            )}
         </PageTransition>
     );
 }

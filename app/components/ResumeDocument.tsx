@@ -9,7 +9,7 @@ import {
     Circle,
     Rect,
 } from "@react-pdf/renderer";
-import {profile, skillGroups, experience, education, interests, languages} from "@/app/data/cv";
+import {profile, skillGroups, experience, education, certifications, interests, languages} from "@/app/data/cv";
 
 const ACCENT = "#000";
 const TEXT_COLOR = "#555";
@@ -223,6 +223,21 @@ export default function ResumeDocument() {
                         <Text style={styles.eduMeta}>{edu.period} · {edu.location}</Text>
                     </View>
                 ))}
+
+                {certifications.length > 0 && (
+                    <>
+                        <Text style={styles.sectionTitle}>Certifications</Text>
+                        {certifications.map((cert) => (
+                            <View key={cert.name + cert.issuer} style={styles.eduRow}>
+                                <Text style={styles.eduDegree}>{cert.name}</Text>
+                                <Text style={styles.eduSchool}>{cert.issuer}</Text>
+                                <Text style={styles.eduMeta}>
+                                    {cert.date}{cert.url ? ` · ${cert.url}` : ""}
+                                </Text>
+                            </View>
+                        ))}
+                    </>
+                )}
 
                 <Text style={styles.sectionTitle}>Languages</Text>
                 <Text style={styles.skillLine}>

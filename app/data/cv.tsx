@@ -322,7 +322,7 @@ export const experience = [
 
 export const education = [
     {
-        degree: "Master's Degree of Management Information Systems",
+        degree: "Master's Degree of Management And Information Systems",
         school: "West Saxon University of Applied Sciences Zwickau / Armenian State University of Economics (ASUE) - joint program.",
         thesis: "Thesis: The Impact of Data Science on Startup Innovation",
         field: "Management Information Systems",
@@ -340,6 +340,34 @@ export const education = [
         period: "09/2002 - 06/2007",
         location: "Yerevan, Armenia",
         diplomas: [{ label: "ASPU diploma", url: "/diplomas/ASPU-Biology-In-Addition-Chemistry-diploma.pdf" }],
+    },
+];
+
+type Certification = {
+    name: string;
+    issuer: string;
+    date: string;
+    // Optional external verification link.
+    url?: string;
+    // Optional local file(s) placed in /public/certificates.
+    files?: { label: string; url: string }[];
+};
+
+export const certifications: Certification[] = [
+    {
+        name: "Claude Code",
+        issuer: "Anthropic",
+        date: "2026",
+        url: "",
+        files: [],
+    },
+    {
+        name: "Cloudflare One Fundamentals",
+        issuer: "Cloudflare",
+        date: "2026",
+        files: [
+            { label: "Certificate", url: "/certificates/hrant-sardaryan-claudeflare-one-fundamentals.pdf" },
+        ],
     },
 ];
 
