@@ -3,6 +3,7 @@ import {
     Page,
     Text,
     View,
+    Link,
     StyleSheet,
     Svg,
     Path,
@@ -13,6 +14,10 @@ import {profile, skillGroups, experience, education, certifications, interests, 
 
 const ACCENT = "#000";
 const TEXT_COLOR = "#555";
+const SITE = "https://hrantsardaryan.labstacks.work";
+
+// PDF links must be absolute; local files live under the site's /public.
+const absoluteUrl = (url: string) => (url.startsWith("http") ? url : `${SITE}${url}`);
 
 const styles = StyleSheet.create({
     page: { padding: 36, fontSize: 10, fontFamily: "Helvetica", color: "#1f1f1f", lineHeight: 1.4 },
@@ -73,6 +78,7 @@ const styles = StyleSheet.create({
     eduDegree: { fontSize: 10, fontWeight: 700, marginBottom: 4 },
     eduSchool: { fontSize: 9, lineHeight: 1.2 },
     eduMeta: { fontSize: 7, color: "#666", marginTop: 4 },
+    eduLink: { fontSize: 8, color: ACCENT, marginTop: 2, textDecoration: "underline" },
 });
 
 function MailIcon() {
@@ -231,9 +237,17 @@ export default function ResumeDocument() {
                             <View key={cert.name + cert.issuer} style={styles.eduRow}>
                                 <Text style={styles.eduDegree}>{cert.name}</Text>
                                 <Text style={styles.eduSchool}>{cert.issuer}</Text>
-                                <Text style={styles.eduMeta}>
-                                    {cert.date}{cert.url ? ` · ${cert.url}` : ""}
-                                </Text>
+                                <Text style={styles.eduMeta}>{cert.date}</Text>
+                                {cert.url ? (
+                                    <Link style={styles.eduLink} src={absoluteUrl(cert.url)}>
+                                        Verify credential
+                                    </Link>
+                                ) : null}
+                                {cert.files?.map((file) => (
+                                    <Link key={file.url} style={styles.eduLink} src={absoluteUrl(file.url)}>
+                                        {file.label}
+                                    </Link>
+                                ))}
                             </View>
                         ))}
                     </>
