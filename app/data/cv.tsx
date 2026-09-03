@@ -344,25 +344,23 @@ export const education = [
 ];
 
 type Certification = {
-    name: string;
+    // Displayed as the group title, e.g. "Cloudflare 2026".
     issuer: string;
     date: string;
     // Optional external verification link.
     url?: string;
     // Optional local file(s) placed in /public/certificates.
+    // A certification with no url and no files is not shown.
     files?: { label: string; url: string }[];
 };
 
 export const certifications: Certification[] = [
     {
-        name: "Claude Code",
         issuer: "Anthropic",
         date: "2026",
-        url: "",
         files: [],
     },
     {
-        name: "Cloudflare One Fundamentals",
         issuer: "Cloudflare",
         date: "2026",
         files: [

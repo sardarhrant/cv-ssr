@@ -6,6 +6,11 @@ import PageTransition from "@/app/components/PageTransition";
 import { FileText, Award, ExternalLink } from "lucide-react";
 import {Fragment} from "react";
 
+// Only show certifications that have at least one link to open.
+const shownCertifications = certifications.filter(
+    (cert) => cert.url || (cert.files && cert.files.length > 0)
+);
+
 export default function Experience() {
     return (
         <PageTransition>
@@ -73,22 +78,18 @@ export default function Experience() {
                 ))}
             </div>
 
-            {certifications.length > 0 && (
+            {shownCertifications.length > 0 && (
                 <>
                     <h2 className="mt-16 mb-10 text-3xl font-bold text-white">Certifications</h2>
                     <div className="space-y-6">
-                        {certifications.map((cert) => (
+                        {shownCertifications.map((cert) => (
                             <div
-                                key={cert.name + cert.issuer}
+                                key={cert.issuer + cert.date}
                                 className="rounded-lg border border-white/10 bg-white/5 p-5"
                             >
-                                <p className="text-sm font-medium text-white">{cert.date}</p>
-                                <hr className="mt-4 mb-4 text-gray-600" />
-                                <h3 className="mt-1 flex items-center gap-2 font-semibold text-white">
-                                    <Award size={18} /> {cert.name}
+                                <h3 className="flex items-center gap-2 font-semibold text-white">
+                                    <Award size={18} /> {cert.issuer} {cert.date}
                                 </h3>
-                                <hr className="mt-4 mb-4 text-gray-600" />
-                                <p className="text-white">{cert.issuer}</p>
                                 {(cert.url || (cert.files && cert.files.length > 0)) && (
                                     <>
                                         <hr className="mt-4 mb-4 text-gray-600" />

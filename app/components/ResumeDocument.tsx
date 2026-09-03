@@ -19,6 +19,11 @@ const SITE = "https://hrantsardaryan.labstacks.work";
 // PDF links must be absolute; local files live under the site's /public.
 const absoluteUrl = (url: string) => (url.startsWith("http") ? url : `${SITE}${url}`);
 
+// Only show certifications that have at least one link to open.
+const shownCertifications = certifications.filter(
+    (cert) => cert.url || (cert.files && cert.files.length > 0)
+);
+
 const styles = StyleSheet.create({
     page: { padding: 36, fontSize: 10, fontFamily: "Helvetica", color: "#1f1f1f", lineHeight: 1.4 },
     name: { fontSize: 22, fontWeight: 600, marginBottom: 14, color: "#111" },
@@ -230,14 +235,12 @@ export default function ResumeDocument() {
                     </View>
                 ))}
 
-                {certifications.length > 0 && (
+                {shownCertifications.length > 0 && (
                     <>
                         <Text style={styles.sectionTitle}>Certifications</Text>
-                        {certifications.map((cert) => (
-                            <View key={cert.name + cert.issuer} style={styles.eduRow}>
-                                <Text style={styles.eduDegree}>{cert.name}</Text>
-                                <Text style={styles.eduSchool}>{cert.issuer}</Text>
-                                <Text style={styles.eduMeta}>{cert.date}</Text>
+                        {shownCertifications.map((cert) => (
+                            <View key={cert.issuer + cert.date} style={styles.eduRow}>
+                                <Text style={styles.eduDegree}>{cert.issuer} {cert.date}</Text>
                                 {cert.url ? (
                                     <Link style={styles.eduLink} src={absoluteUrl(cert.url)}>
                                         Verify credential
