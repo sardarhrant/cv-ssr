@@ -366,7 +366,9 @@ export const certifications: Certification[] = [
         issuer: "Cloudflare",
         date: "2026",
         files: [
-            { label: "Certificate", url: "/certificates/hrant-sardaryan-claudeflare-one-fundamentals.pdf" },
+            { label: "Cloudflare One Fundamentals (Partner)", url: "/certificates/hrant-sardaryan-claudeflare-one-fundamentals.pdf" },
+            { label: "Introduction to Cloudflare", url: "/certificates/hrant-sardaryan-claudflare-introduction.pdf" },
+            { label: "Developer Fundamentals", url: "/certificates/hrant-sardaryan-developer-fundamentals.pdf" },
         ],
     },
 ];
